@@ -3,6 +3,7 @@ import { Nabvar } from "./components/navbar/Nabvar"
 import { WeeklyPinned } from "./components/weeklyPinned/WeeklyPinned"
 import { Today } from "./components/today/Today"
 import { Notices } from "./components/notices/Notices"
+import './index.css'
 
 export const App = () => {
   return (
