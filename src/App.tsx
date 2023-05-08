@@ -3,11 +3,17 @@ import { Nabvar } from "./components/navbar/Nabvar"
 import { WeeklyPinned } from "./components/weeklyPinned/WeeklyPinned"
 import { Today } from "./components/today/Today"
 import { Notices } from "./components/notices/Notices"
+import { UserContext } from './context/userContext';
 import './index.css'
 
 export const App = () => {
+
+  const user = {
+    name: "Miguel Orjuela"
+  }
+
   return (
-    <div>
+    <UserContext.Provider value={{user}}>
       <Nabvar />
       <Layout>
         <div className="row justify-content-center">
@@ -22,6 +28,6 @@ export const App = () => {
           </div>
         </div>
       </Layout>
-    </div>
+    </UserContext.Provider>
   )
 }
