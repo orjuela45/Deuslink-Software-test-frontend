@@ -1,9 +1,9 @@
 import { useContext } from "react"
-import { UserContext } from "../../context/userContext"
+import { UserContext } from "../../context/"
 
 export const UserCard = () => {
 
-  const {user} = useContext(UserContext)
+  const user = useContext(UserContext)
 
   return (
     <div className="d-flex">

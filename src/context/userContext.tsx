@@ -1,7 +1,6 @@
 import { createContext } from "react";
+import { UserInterface } from "../interfaces";
 
-export const UserContext = createContext({
-  user: {
-    name: ''
-  }
+export const UserContext = createContext<UserInterface>({
+  name: ''
 });
