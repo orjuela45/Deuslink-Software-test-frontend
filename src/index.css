@@ -6,3 +6,7 @@ body{
 .ff-regular{
   font-family: 'Gilroy-Regular', sans-serif;
 }
+
+.rounded-personal{
+  border-radius: 11.9048px;
+}
