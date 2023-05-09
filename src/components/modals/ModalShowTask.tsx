@@ -32,7 +32,7 @@ export const ModalShowTask = ({ task }: { task: TaskInterface|null}) => {
   
   const onFormSubmit = async(event: any) => {
     event.preventDefault();
-    validations()
+    if(!validations())return
     const payload: any = {
       ...formState
     }
