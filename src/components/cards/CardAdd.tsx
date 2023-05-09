@@ -12,7 +12,7 @@ export const CardAdd = ({pinned}: {pinned: boolean}) => {
   }
 
   return (
-    <div className="card flex-row col-12 col-xl-3 bg-white border-0 py-4">
+    <div className="card flex-row col-12 col-xl-3 bg-white border-0 py-4 m-4">
       <div className="d-flex col-3 align-self-center justify-content-center">
         <a href="" onClick={handleClick}>
           <ImageCard src={'/btnPlus.svg'} />

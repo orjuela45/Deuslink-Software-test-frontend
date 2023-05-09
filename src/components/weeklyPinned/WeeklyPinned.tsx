@@ -6,7 +6,7 @@ import { useContext, useState } from 'react';
 export const WeeklyPinned = () => {
 
   const [pinned, setPinned] = useState(true)
-  const tasks = useContext(TaskContext)
+  const {tasks} = useContext(TaskContext)
 
   const taskPinned = tasks.filter(task => {
     if (pinned){

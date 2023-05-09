@@ -5,10 +5,10 @@ export const useForm = <T>(initialForm = {}) => {
   const [formState, setFormState] = useState<T|{}>(initialForm)
 
   const onInputChange = ({target}: {target:any}) =>{
-    const {name, value} = target
+    const {name, value, checked, type} = target
     setFormState({
       ...formState,
-      [name]: value
+      [name]: type == 'checkbox' ? checked: value
     })
   }
 
