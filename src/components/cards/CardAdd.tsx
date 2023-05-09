@@ -4,7 +4,6 @@ export const CardAdd = ({pinned}: {pinned: boolean}) => {
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) =>{
     e.preventDefault()
-    alert("Modal agregar")
   }
 
   return (
