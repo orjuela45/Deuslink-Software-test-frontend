@@ -20,7 +20,7 @@ const user: UserInterface = {
 export const App = () => {
 
   const [tasks, setTasks] = useState([])
-  const [currentTask, setCurrentTask] = useState<TaskInterface>({
+  const [task, setTask] = useState<TaskInterface|null>({
     _id: '',
     title: '',
     description: '',
@@ -37,9 +37,9 @@ export const App = () => {
   }
 
   const handleClose = () => setShow(false);
-  const handleShow = (task: TaskInterface) => {
+  const handleShow = (task: TaskInterface|null) => {
     setShow(true);
-    setCurrentTask(task);
+    setTask(task);
   };
 
   useEffect(() => {
@@ -49,11 +49,11 @@ export const App = () => {
 
   return (
     <UserContext.Provider value={user}>
-      <ModalContext.Provider value={{show, handleClose, handleShow, currentTask}} >
+      <ModalContext.Provider value={{show, handleClose, handleShow, task}} >
         <Nabvar />
         <Layout>
           <TaskContext.Provider value={{tasks, getTasks}}>
-            <ModalShowTask task={currentTask} />
+            <ModalShowTask task={task} />
             <div className="row justify-content-between">
               <div className="col-12 col-xl-12 pe-5">
                 <WeeklyPinned />

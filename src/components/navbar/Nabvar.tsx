@@ -1,5 +1,4 @@
 import { ModalContext } from "../../context";
-import { TaskInterface } from "../../interfaces";
 import { UserCard } from "../user/UserCard";
 import { useContext } from 'react';
 

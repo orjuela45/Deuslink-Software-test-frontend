@@ -9,12 +9,12 @@ import { TaskService } from "../../helpers/httpRequest";
 
 const taskService = new TaskService();
 
-export const ModalShowTask = ({ task }: { task: TaskInterface}) => {
+export const ModalShowTask = ({ task }: { task: TaskInterface|null}) => {
   const [update, setUpdate] = useState(false)
   const { show, handleClose } = useContext(ModalContext);
   const { getTasks } = useContext(TaskContext);
   
-  const {onInputChange, onResetForm, formState, setFormState} = useForm<TaskInterface>({
+  const {onInputChange, onResetForm, formState, setFormState}: {onInputChange: any, onResetForm: any, formState: any, setFormState: any} = useForm<TaskInterface>({
     _id: '',
     title: '',
     description: '',
@@ -33,7 +33,7 @@ export const ModalShowTask = ({ task }: { task: TaskInterface}) => {
   const onFormSubmit = async(event: any) => {
     event.preventDefault();
     validations()
-    const payload: TaskInterface = {
+    const payload: any = {
       ...formState
     }
     let status = 401; 
@@ -75,7 +75,7 @@ export const ModalShowTask = ({ task }: { task: TaskInterface}) => {
   
   useEffect(() => {
     if (update){
-      task.date = moment(task.date.toString()).format('YYYY-MM-DDTHH:mm:ss');
+      task!.date = moment(task?.date.toString()).format('YYYY-MM-DDTHH:mm:ss');
       setFormState(task)
     }
   }, [update])
@@ -83,7 +83,7 @@ export const ModalShowTask = ({ task }: { task: TaskInterface}) => {
   if (task && !update) { //agregar or edit aqui
     return (
       <Modal
-        show={show}
+        show={!!show}
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
@@ -134,7 +134,7 @@ export const ModalShowTask = ({ task }: { task: TaskInterface}) => {
   } else {
     return (
       <Modal
-        show={show}
+        show={!!show}
         onHide={handleClose}
         backdrop="static"
         keyboard={false}

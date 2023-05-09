@@ -1,4 +1,7 @@
 import { createContext } from "react";
-import { TaskInterface } from "../interfaces/";
+import { TaskContextType } from "../types/context";
 
-export const TaskContext = createContext<TaskInterface[]>([]);
+export const TaskContext = createContext<TaskContextType>({
+  tasks: [],
+  getTasks: () => {}
+});
