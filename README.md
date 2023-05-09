@@ -43,4 +43,4 @@ Once the project is launch, you can use it with the url that the terminal give y
 
 ## Note
 
-- I deploy this project in netlify, the link is: 
+- I deploy this project in netlify, the link is: https://645aba64a65b9f40a3ae1bc0--joyful-pie-940e9d.netlify.app
