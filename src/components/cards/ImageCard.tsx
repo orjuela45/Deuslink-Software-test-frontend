@@ -1,4 +1,4 @@
-export const ImageCard = ({src}: {src:string}) => {
+export const ImageCard = ({src}: {src:string|undefined}) => {
   if (src == '') src = '/taskIcon.png'
   return (
     <div className="bg-primary rounded-personal p-2 text-center">
