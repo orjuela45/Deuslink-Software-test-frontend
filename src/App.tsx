@@ -9,6 +9,7 @@ import { TaskService } from './helpers/httpRequest';
 import { UserInterface } from "./interfaces"
 import './index.css'
 import { TaskInterface } from './interfaces/task';
+import { ModalShowTask } from "./components/modals/ModalShowTask"
 
 const taskService = new TaskService()
 const user: UserInterface = {
@@ -18,7 +19,7 @@ const user: UserInterface = {
 export const App = () => {
 
   const [tasks, setTasks] = useState([])
-  const [currentTask, setCurrentTask] = useState(null)
+  const [currentTask, setCurrentTask] = useState<TaskInterface|null>(null)
   const [show, setShow] = useState(false);
 
   const getTasks = async() => {
@@ -43,16 +44,17 @@ export const App = () => {
         <Nabvar />
         <Layout>
           <TaskContext.Provider value={tasks}>
+            <ModalShowTask task={currentTask} />
             <div className="row justify-content-between">
-              <div className="col-12 col-xl-4 pe-5">
+              <div className="col-12 col-xl-12 pe-5">
                 <WeeklyPinned />
               </div>
-              <div className="col-12 col-xl-4 pe-5 bg-primary">
+              {/* <div className="col-12 col-xl-4 pe-5 bg-primary">
                 <Today />
               </div>
               <div className="col-12 col-xl-4 pe-5 bg-danger">
                 <Notices />
-              </div>
+              </div> */}
             </div>
           </TaskContext.Provider>
         </Layout>

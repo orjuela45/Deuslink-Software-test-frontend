@@ -1,13 +1,18 @@
+import { ModalContext } from "../../context";
 import { ImageCard } from "./ImageCard"
+import { useContext } from 'react';
 
 export const CardAdd = ({pinned}: {pinned: boolean}) => {
 
+  const { handleShow } = useContext(ModalContext);
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) =>{
     e.preventDefault()
+    handleShow(null)
   }
 
   return (
-    <div className="card flex-row w-100 bg-white border-0 py-4">
+    <div className="card flex-row col-12 col-xl-3 bg-white border-0 py-4">
       <div className="d-flex col-3 align-self-center justify-content-center">
         <a href="" onClick={handleClick}>
           <ImageCard src={'/btnPlus.svg'} />
