@@ -33,8 +33,8 @@ export const App = () => {
       <Nabvar />
       <Layout>
         <TaskContext.Provider value={tasks}>
-          <div className="row justify-content-center">
-            <div className="col-4 bg-success">
+          <div className="row justify-content-between">
+            <div className="col-4 pe-5">
               <WeeklyPinned />
             </div>
             <div className="col-4 bg-primary">

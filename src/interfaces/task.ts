@@ -3,7 +3,7 @@ export interface TaskInterface{
   title: string,
   description?: string,
   tags?: string[],
-  date: Date,
+  date: String,
   pinned: boolean
   icon?: string 
 }
