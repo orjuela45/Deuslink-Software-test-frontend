@@ -43,7 +43,7 @@ export const ModalShowTask = ({ task }: { task: TaskInterface|null}) => {
       msg = 'Task Updated'
     }else{
       status = (await taskService.createTask(payload)).status
-      msg = 'Task deleted'
+      msg = 'Task Created'
     }
     if(status !== 200) return alert("Something wrong")
     getTasks()
